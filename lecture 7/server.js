@@ -14,18 +14,22 @@ const server=http.createServer((req, res) => {
         res.writeHead(200, {"Content-Type": "text/html"});
         res.write("<h1>Welcome to Home Page</h1>");
         res.end();
+
     }else if(req.url=="/about" && req.method=="GET"){
         res.writeHead(200, {"Content-Type": "text/html"});
         res.write("<h1>Welcome to About Page</h1>");
         res.end();
+
     }else if(req.url=="/contact" && req.method=="GET"){
         res.writeHead(200, {"Content-Type": "text/html"});
         res.write("<h1>Welcome to Contact Page</h1>");
         res.end();
+
     }else if(req.url=="/users" && req.method=="GET"){
         res.writeHead(200, {"Content-Type": "application/json"});
         res.write(JSON.stringify({"tatal":users.length,"users":users}));
         res.end();
+        
     }else if( req.url="/users" && req.method=="POST"){
         let body="";
         req.on("data", (chunk) => {
